@@ -152,7 +152,7 @@ void module_node::mount() {
         string src = MODULEROOT "/" + path;
         if (exist()) clone_attr(mirror_path().data(), src.data());
         // special case for /system/etc/hosts to ensure it is writable
-        if (node_path() == "/system/etc/hosts") mnt_src = std::move(src);
+//        if (node_path() == "/system/etc/hosts") mnt_src = std::move(src);
     }
     if (isa<tmpfs_node>(parent())) {
         create_and_mount("module", mnt_src);
